@@ -1,0 +1,9 @@
+import csv;
+
+with open('../captura/captura_vitor.csv', 'r') as csvfile:
+    reader = csv.reader(csvfile, delimiter=';')
+    linhas = list(reader) # função do python que transforma os dados do csv em uma lista
+
+    print(linhas)
+    for linha in linhas:
+        print(linha[1])
