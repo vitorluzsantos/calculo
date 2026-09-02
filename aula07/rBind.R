@@ -35,3 +35,4 @@ dfGeral <- rbind(dfVitor, dfMatheus, dfCarlos, dfRaphael, dfLivia)
 
 head(dfGeral)
 rm(df)
+
