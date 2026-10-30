@@ -1,0 +1,69 @@
+# idade <- quantitativa discreta
+idade <- round(rnorm(n = 70, mean = 30, sd = 2),0)
+
+# altura <- quantitativa discreta
+altura <- round(rnorm(n = 70, mean = 1.75, sd = 0.1),2)
+
+# peso <- quantitativa continua
+peso <- round(rnorm(n = 70, mean = 65.0, sd = 10),2)
+
+# imc <- quantitativa continua
+imc <- round(peso / (altura ^ 2),2)
+
+# sexo <- qualitativa nominal
+generos = c(1,2) # 1 = masculino ; 2 = feminino
+sexo <- sample(generos, 70, replace = TRUE, prob = c(0.4, 0.6))
+
+# escolaridade <- qualitativa ordinal
+#	=0=> analfabeto
+#	=1=> 1 grau completo
+#	=2=> 2 grau completo
+#	=3=> 3 grau completo
+#	=4=> mestrado
+#	=5=> doutorado
+#	=6=> pos doutorado
+
+niveis <- c(0, 1, 2, 3, 4, 5, 6)
+escolaridade <- sample(niveis, 70, replace = TRUE, prob = c(0.1, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1))
+
+# profissao <- qualitativa nominal
+# 1 = humanas ; 2 = exatas ; 3 = biologicas
+tipos <- c(1, 2, 3)
+profissao <- sample(tipos, 70, replace = TRUE, prob = c(0.5, 0.3, 0.2))
+
+# fumante <- qualitativa ordinal
+# 0 = não ; 1 = sim
+fuma = c(0, 1)
+fumante = sample(fuma, 70, replace = TRUE, prob = c(0.7, 0.3))
+
+# salario <- quantitativa continua
+salario <- round(rnorm(n = 70, mean = 4000.00, sd = 1000),2)
+
+# carros <- quantitativa discreta
+# quantidade de carros
+quantidade <- c(0, 1, 2, 3, 4)
+carros <- sample(quantidade, 70, replace = TRUE, c(0.3, 0.4, 0.1, 0.1, 0.1))
+
+# filhos <- quantitativa discreta
+nFilhos <- c(0, 1, 2, 3)
+filhos <- sample(nFilhos, 70, replace = TRUE, c(0.4, 0.3, 0.2, 0.1))
+
+# persona = jovens adultos
+df_adultos <- data.frame(
+	idade,
+	altura,
+	peso,
+	imc,
+	sexo,
+	escolaridade,
+	profissao,
+	fumante,
+	salario,
+	carros,
+	filhos
+)
+
+# qual a relação de peso com a profissao da pessoa / idade de um aluno
+
+df_adultos$escolaridade
+df_adultos$profissao
